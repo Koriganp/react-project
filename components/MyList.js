@@ -3,9 +3,9 @@ import React from "react"
 function MyList() {
 	return(
 		<ul>
-			<li>1</li>
-			<li>2</li>
-			<li>3</li>
+			<li>Learn React</li>
+			<li>Learn Meteor</li>
+			<li>Build Web App</li>
 		</ul>
 	)
 }

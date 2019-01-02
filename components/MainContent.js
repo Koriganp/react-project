@@ -1,10 +1,14 @@
 import React from "react"
 
+import MyInfo from "./MyInfo"
+import MyList from "./MyList"
+
 function MainContent() {
 	return (
-		<main>
-			<h1>This is the body of my page</h1>
-		</main>
+		<div>
+			<MyInfo />
+			<MyList />
+		</div>
 	)
 }
 
