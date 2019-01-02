@@ -2,11 +2,10 @@
 import React from "react"
 import ReactDOM from "react-dom"
 
-//import my components
-import MyList from "./components/MyList"
+//import main app
+import App from "./App"
 
-// JSX
 ReactDOM.render(
-	<MyList />,
+	<App />,
 	document.getElementById("root")
 )
