@@ -5,10 +5,10 @@ import MyList from "./MyList"
 
 function MainContent() {
 	return (
-		<div>
+		<main>
 			<MyInfo />
 			<MyList />
-		</div>
+		</main>
 	)
 }
 
