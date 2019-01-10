@@ -7,6 +7,7 @@ import Footer from "./components/Footer"
 import Conditional from "./components/Conditional"
 
 class App extends Component {
+
 	constructor() {
 		super();
 		this.state = {
@@ -15,12 +16,15 @@ class App extends Component {
 			unreadMessages: [
 				"Call your mom!",
 				"New spam email available. All links are definitely safe to click."
-			]
+			],
+			loading: false,
+			character: {}
 		};
 		this.handleClick = this.handleClick.bind(this)
 	}
 
 	handleClick() {
+
 		this.setState(prevState =>{
 			return {
 				isLoggedIn: !prevState.isLoggedIn
@@ -30,11 +34,23 @@ class App extends Component {
 
 
 	componentDidMount() {
+
 		setTimeout(() => {
 			this.setState({
-				isLoading: false
+				isLoading: false,
+				loading: true
 			})
-		}, 1500)
+		}, 1500);
+
+		fetch("https://swapi.co/api/people/1")
+			.then(response => response.json())
+			.then(data => {
+				this.setState({
+					loading: false,
+					character: data
+				})
+			})
+
 	}
 
 	render() {
