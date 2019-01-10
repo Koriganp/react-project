@@ -55,6 +55,7 @@ class App extends Component {
 
 	render() {
 		let buttonText = this.state.isLoggedIn ? "LOG OUT" : "LOG IN";
+		const text = this.state.loading ? "loading..." : this.state.character.name
 		return (
 			<div>
 
@@ -62,18 +63,20 @@ class App extends Component {
 
 				<button onClick={this.handleClick}>{buttonText}</button>
 
+				<p>{text}</p>
+
+				{
+					this.state.isLoading ?
+						<h1>Loading...</h1> :
+						<Conditional />
+				}
+
 				{
 					this.state.unreadMessages.length > 0 &&
 					<h2>You have {this.state.unreadMessages.length} unread messages!</h2>
 				}
 
 				<MainContent />
-
-				{
-					this.state.isLoading ?
-					<h1>Loading...</h1> :
-					<Conditional />
-				}
 
 				<Footer />
 
