@@ -19,14 +19,14 @@ class App extends Component {
 			],
 			loading: false,
 			character: {},
-			firstName: ""
+			firstName: "",
+			lastName: ""
 		};
 		this.handleClick = this.handleClick.bind(this);
 		this.handleChange = this.handleChange.bind(this)
 	}
 
 	handleClick() {
-
 		this.setState(prevState =>{
 			return {
 				isLoggedIn: !prevState.isLoggedIn
@@ -35,8 +35,9 @@ class App extends Component {
 	}
 
 	handleChange() {
+		const {name, value} = event.target;
 		this.setState({
-			[event.target.name]: event.target.value
+			[name]: value
 		})
 	}
 
@@ -87,8 +88,8 @@ class App extends Component {
 				<MainContent />
 
 				<form>
-					<input type="text" name="firstName" placeholder="First Name" onChange={this.handleChange} />
-					<input type="text" name="lastName" placeholder="Last Name" onChange={this.handleChange} />
+					<input type="text" value={this.state.firstName} name="firstName" placeholder="First Name" onChange={this.handleChange} />
+					<input type="text" value={this.state.lastName} name="lastName" placeholder="Last Name" onChange={this.handleChange} />
 				</form>
 
 				<Footer />
