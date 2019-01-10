@@ -55,7 +55,7 @@ class App extends Component {
 
 	render() {
 		let buttonText = this.state.isLoggedIn ? "LOG OUT" : "LOG IN";
-		const text = this.state.loading ? "loading..." : this.state.character.name
+		const text = this.state.loading ? "loading..." : this.state.character.name;
 		return (
 			<div>
 
