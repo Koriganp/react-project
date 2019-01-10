@@ -21,6 +21,7 @@ class Info extends Component {
 		// https://reactjs.org/docs/react-component.html#getsnapshotbeforeupdate
 	}
 
+	DEPRECATED!!!
 	// componentWillMount() {
 
 	// }
@@ -29,6 +30,7 @@ class Info extends Component {
 		// GET the data I need to correctly display
 	}
 
+	DEPRECATED!!!
 	// componentWillReceiveProps(nextProps) {
 	//     if (nextProps.whatever !== this.props.whatever) {
 	//         // do something important here
@@ -40,6 +42,7 @@ class Info extends Component {
 		// return false if not
 	}
 
+	DEPRECATED!!!
 	// componentWillUpdate() {
 
 	// }
