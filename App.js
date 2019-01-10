@@ -20,7 +20,11 @@ class App extends Component {
 			loading: false,
 			character: {},
 			firstName: "",
-			lastName: ""
+			lastName: "",
+			aboutMe: "",
+			isAwesome: false,
+			gender: "",
+			favColor: "blue"
 		};
 		this.handleClick = this.handleClick.bind(this);
 		this.handleChange = this.handleChange.bind(this)
@@ -35,10 +39,8 @@ class App extends Component {
 	}
 
 	handleChange() {
-		const {name, value} = event.target;
-		this.setState({
-			[name]: value
-		})
+		const {name, value, type, checked} = event.target;
+		type === "checkbox" ? this.setState({ [name]: checked }) : this.setState({ [name]: value })
 	}
 
 
@@ -89,7 +91,34 @@ class App extends Component {
 
 				<form>
 					<input type="text" value={this.state.firstName} name="firstName" placeholder="First Name" onChange={this.handleChange} />
+					<br />
 					<input type="text" value={this.state.lastName} name="lastName" placeholder="Last Name" onChange={this.handleChange} />
+					<br />
+					<textarea value={this.state.aboutMe} name="aboutMe" placeholder="About Me" onChange={this.handleChange} />
+					<br />
+					<label>
+						<input type="checkbox" name="isAwesome" checked={this.state.isAwesome} onChange={this.handleChange} />
+						Is Awesome?
+					</label>
+					<br />
+					<label>
+						<input type="radio" name="gender" value="male" checked={this.state.gender === "male"} onChange={this.handleChange}/>
+						Male
+					</label>
+					<br />
+					<label>
+						<input type="radio" name="gender" value="female" checked={this.state.gender === "female"} onChange={this.handleChange}/>
+						Female
+					</label>
+					<br />
+					<label>Favorite Color:</label>
+					<select name="favColor" value={this.state.favColor} onChange={this.handleChange}>
+						<option value="blue">Blue</option>
+						<option value="green">Green</option>
+						<option value="red">Red</option>
+						<option value="orange">Orange</option>
+						<option value="yellow">Yellow</option>
+					</select>
 				</form>
 
 				<Footer />
