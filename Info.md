@@ -2,6 +2,7 @@ import React, {Component} from "react"
 
 // https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1
 // https://reactjs.org/blog/2018/03/29/react-v-16-3.html#component-lifecycle-changes
+// https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0
 // Formik - React form library
 
 class Info extends Component {
