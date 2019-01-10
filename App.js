@@ -5,6 +5,7 @@ import MainContent from "./components/MainContent"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Conditional from "./components/Conditional"
+import Form from "./components/Form"
 
 class App extends Component {
 
