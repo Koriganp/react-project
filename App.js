@@ -10,9 +10,24 @@ class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			isLoading: true
-		}
+			isLoading: true,
+			isLoggedIn: false,
+			unreadMessages: [
+				"Call your mom!",
+				"New spam email available. All links are definitely safe to click."
+			]
+		};
+		this.handleClick = this.handleClick.bind(this)
 	}
+
+	handleClick() {
+		this.setState(prevState =>{
+			return {
+				isLoggedIn: !prevState.isLoggedIn
+			}
+		})
+	}
+
 
 	componentDidMount() {
 		setTimeout(() => {
@@ -23,14 +38,29 @@ class App extends Component {
 	}
 
 	render() {
+		let buttonText = this.state.isLoggedIn ? "LOG OUT" : "LOG IN";
 		return (
 			<div>
+
 				<Header />
+
+				<button onClick={this.handleClick}>{buttonText}</button>
+
+				{
+					this.state.unreadMessages.length > 0 &&
+					<h2>You have {this.state.unreadMessages.length} unread messages!</h2>
+				}
+
 				<MainContent />
-				{this.state.isLoading ?
+
+				{
+					this.state.isLoading ?
 					<h1>Loading...</h1> :
-					<Conditional />}
+					<Conditional />
+				}
+
 				<Footer />
+
 			</div>
 		)
 	}
