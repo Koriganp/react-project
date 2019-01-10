@@ -18,9 +18,11 @@ class App extends Component {
 				"New spam email available. All links are definitely safe to click."
 			],
 			loading: false,
-			character: {}
+			character: {},
+			firstName: ""
 		};
-		this.handleClick = this.handleClick.bind(this)
+		this.handleClick = this.handleClick.bind(this);
+		this.handleChange = this.handleChange.bind(this)
 	}
 
 	handleClick() {
@@ -29,6 +31,12 @@ class App extends Component {
 			return {
 				isLoggedIn: !prevState.isLoggedIn
 			}
+		})
+	}
+
+	handleChange() {
+		this.setState({
+			[event.target.name]: event.target.value
 		})
 	}
 
@@ -77,6 +85,11 @@ class App extends Component {
 				}
 
 				<MainContent />
+
+				<form>
+					<input type="text" name="firstName" placeholder="First Name" onChange={this.handleChange} />
+					<input type="text" name="lastName" placeholder="Last Name" onChange={this.handleChange} />
+				</form>
 
 				<Footer />
 
